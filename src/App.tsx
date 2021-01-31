@@ -1,38 +1,31 @@
-import * as React from "react"
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+import * as React from 'react'
+import { ChakraProvider, extendTheme, Flex } from '@chakra-ui/react'
+import { ColorModeSwitcher } from './ColorModeSwitcher'
+import GameComponent from './components/GameComponent'
+
+const theme = extendTheme({
+  sizes: {
+    text: {
+      mobile: '12px',
+      desktop: '16px',
+    },
+  },
+  styles: {
+    global: (props) => ({
+      'html, body': {
+        backgroundColor: props.colorMode === 'dark' ? '#555b6e' : '#faf9f9',
+      },
+    }),
+  },
+})
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
+    <Flex justify='flex-end' mt='2' mr='2' minW='300px'>
+      <ColorModeSwitcher />
+    </Flex>
+    <Flex justify='center' fontSize='xl'>
+      <GameComponent />
+    </Flex>
   </ChakraProvider>
 )
