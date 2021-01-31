@@ -7,6 +7,7 @@ export const useSwipeEvents = (dispatcher: React.Dispatch<ActionType>) => {
     onSwiped: (e) => {
       dispatcher({ type: 'KEY_MOVE', payload: `Arrow${e.dir}` })
     },
+    preventDefaultTouchmoveEvent: true,
   })
 
   return swipeHandlers

@@ -1,4 +1,5 @@
 import { Flex, Heading, useColorMode, useMediaQuery } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import React, { useEffect, useReducer } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import { useSwipeEvents } from '../hooks/useSwipeEvent'
@@ -71,42 +72,75 @@ const GameComponent = () => {
         mt='1'
         zIndex={3}
       >
-        <Heading
-          as={desktop ? 'h1' : 'h4'}
-          ml='2'
-          bgGradient={
-            colorMode === 'light'
-              ? 'linear(to-t, gray.500, gray.900)'
-              : 'linear(to-t, gray.100, gray.500)'
-          }
-          bgClip='text'
+        <motion.div
+          initial={{ x: '-100vw' }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
-          2Power
-        </Heading>
-        <GameStats
-          score={state.score}
-          highestScore={highestScore}
-          colorMode={colorMode}
-          desktop={desktop}
-        />
-      </Flex>
-      <Flex
-        w='100%'
-        bg={colorMode === 'light' ? 'gray.300' : 'gray.300'}
-        borderRadius='lg'
-        {...swipeHandlers}
-      >
-        {board && (
-          <BoardWrapper
-            board={board}
-            playing={state.playing}
+          <Heading
+            as={desktop ? 'h1' : 'h4'}
+            ml='2'
+            bgGradient={
+              colorMode === 'light'
+                ? 'linear(to-t, gray.500, gray.900)'
+                : 'linear(to-t, gray.100, gray.500)'
+            }
+            bgClip='text'
+          >
+            2Power
+          </Heading>
+        </motion.div>
+        <motion.div
+          initial={{ x: '100vw' }}
+          animate={{ x: 0 }}
+          transition={{
+            delay: 0.8,
+            duration: 0.8,
+          }}
+        >
+          <GameStats
+            score={state.score}
+            highestScore={highestScore}
             colorMode={colorMode}
             desktop={desktop}
-            setNewGame={setNewGame}
           />
-        )}
+        </motion.div>
       </Flex>
-      <Rules colorMode={colorMode} desktop={desktop} />
+      <motion.div
+        initial={{ y: '100vh' }}
+        animate={{ y: 0 }}
+        // initial={{ scale: 0 }}
+        // animate={{ scale: [0.2, 0.4, 0.6, 0.8, 1] }}
+        transition={{
+          delay: 1.1,
+          duration: 0.8,
+        }}
+      >
+        <Flex
+          w='100%'
+          bg={colorMode === 'light' ? 'gray.300' : 'gray.300'}
+          borderRadius='lg'
+          {...swipeHandlers}
+        >
+          {board && (
+            <BoardWrapper
+              board={board}
+              playing={state.playing}
+              colorMode={colorMode}
+              desktop={desktop}
+              setNewGame={setNewGame}
+            />
+          )}
+        </Flex>
+      </motion.div>
+      <motion.div
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+        transition={{ delay: 1.4, duration: 0.7 }}
+        style={{ alignSelf: 'flex-start' }}
+      >
+        <Rules colorMode={colorMode} desktop={desktop} />
+      </motion.div>
     </Flex>
   )
 }
