@@ -1,13 +1,9 @@
+import EventEmitter from 'events';
+import { cloneDeep, isEmpty, isEqual, xorWith } from 'lodash';
+
 import {
-  Cell,
-  CellCoordinates,
-  ColorMode,
-  GameBoard,
-  GameState,
-  MoveDirection,
-} from '../types/gameTypes'
-import { cloneDeep, isEmpty, isEqual, xorWith } from 'lodash'
-import EventEmitter from 'events'
+    Cell, CellCoordinates, ColorMode, GameBoard, GameState, MoveDirection
+} from '../types/gameTypes';
 
 export const showPointsOnMoveEvent = new EventEmitter()
 export const bounceBoardOnMove = new EventEmitter()

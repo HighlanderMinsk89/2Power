@@ -1,6 +1,8 @@
-import { Stack, Text, Flex } from '@chakra-ui/react'
-import React from 'react'
-import PointsEarned from './PointsEarned'
+import React from 'react';
+
+import { Flex, Stack, Text } from '@chakra-ui/react';
+
+import PointsEarned from './PointsEarned';
 
 type GameStateProps = {
   score: number

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
+
+import { motion } from 'framer-motion'
 import { Flex } from '@chakra-ui/react'
+
 import { ColorMode, GameBoard } from '../types/gameTypes'
+import { bounceBoardOnMove } from '../utils/gameUtils'
 import Modal from './Modal'
 import RowComponent from './RowComponent'
-import { motion } from 'framer-motion'
-import { bounceBoardOnMove } from '../utils/gameUtils'
 
 type BoardProps = {
   board: GameBoard

@@ -1,6 +1,8 @@
+import React, { useEffect, useReducer } from 'react'
+
 import { Flex, Heading, useColorMode, useMediaQuery } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import React, { useEffect, useReducer } from 'react'
+
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import { useSwipeEvents } from '../hooks/useSwipeEvent'
 import { GameState } from '../types/gameTypes'

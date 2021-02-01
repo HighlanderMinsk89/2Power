@@ -1,14 +1,10 @@
+import React from 'react';
+
 import {
-  Flex,
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-} from '@chakra-ui/react'
-import React from 'react'
-import { ColorMode } from '../types/gameTypes'
+    Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex
+} from '@chakra-ui/react';
+
+import { ColorMode } from '../types/gameTypes';
 
 type RulesProps = {
   colorMode: ColorMode

@@ -1,7 +1,9 @@
-import React from 'react'
-import { Flex } from '@chakra-ui/react'
-import { Cell, ColorMode } from '../types/gameTypes'
-import CellComponent from './CellComponent'
+import React from 'react';
+
+import { Flex } from '@chakra-ui/react';
+
+import { Cell, ColorMode } from '../types/gameTypes';
+import CellComponent from './CellComponent';
 
 type RowProps = {
   row: Cell[]

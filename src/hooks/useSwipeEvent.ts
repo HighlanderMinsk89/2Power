@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSwipeable } from 'react-swipeable'
+
 import { ActionType } from '../types/gameTypes'
 
 export const useSwipeEvents = (dispatcher: React.Dispatch<ActionType>) => {

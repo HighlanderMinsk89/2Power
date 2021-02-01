@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { Button, Flex, Text } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import React from 'react'
+
 import { ColorMode } from '../types/gameTypes'
 
 type Props = {

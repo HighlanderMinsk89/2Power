@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion'
 import React, { Fragment, useCallback, useEffect, useState } from 'react'
+
 import { showPointsOnMoveEvent } from '../utils/gameUtils'
+import { motion } from 'framer-motion'
 
 const variants = {
   hidden: {

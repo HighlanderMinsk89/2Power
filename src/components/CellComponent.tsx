@@ -1,8 +1,10 @@
 import React from 'react'
-import { Cell, ColorMode } from '../types/gameTypes'
+
 import { Flex, Heading } from '@chakra-ui/react'
-import { cellColorDecider } from '../utils/gameUtils'
 import { motion } from 'framer-motion'
+
+import { Cell, ColorMode } from '../types/gameTypes'
+import { cellColorDecider } from '../utils/gameUtils'
 
 type CellProps = {
   key: number
